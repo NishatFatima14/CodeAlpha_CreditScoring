@@ -1,0 +1,49 @@
+# CodeAlpha Credit Scoring Project — Commands Guide
+
+# 0) Go to project folder (after extracting ZIP)
+# Windows PowerShell
+cd C:\Users\YourUser\Downloads\CodeAlpha_CreditScoring
+
+# macOS/Linux
+cd ~/Downloads/CodeAlpha_CreditScoring
+
+
+# 1) Create virtual environment and activate it
+# Windows PowerShell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+
+# macOS/Linux
+python3 -m venv .venv
+source .venv/bin/activate
+
+
+# 2) Upgrade pip and install dependencies
+python -m pip install --upgrade pip wheel setuptools
+pip install -r requirements.txt
+
+
+# 3) Train the model
+# Windows
+python src\train.py --data data\credit.csv --target default --test-size 0.2 --random-state 42
+
+# macOS/Linux
+python3 src/train.py --data data/credit.csv --target default --test-size 0.2 --random-state 42
+
+
+# 4) Check artifacts & metrics report
+# Windows
+dir .\artifacts
+type .\artifacts\metrics_report.md
+
+# macOS/Linux
+ls artifacts
+cat artifacts/metrics_report.md
+
+
+# 5) Run inference (on applicants file without target column)
+# Windows
+python src\infer.py --input data\credit_input.csv --output artifacts\predictions.csv
+
+# macOS/Linux
+python3 src/infer.py --input data/credit_input.csv --output artifacts/predictions.csv

@@ -1,0 +1,24 @@
+{
+  "numeric": [
+    "age",
+    "income",
+    "employment_years",
+    "debt",
+    "credit_history_years",
+    "num_open_accounts",
+    "num_delinquencies",
+    "loan_amount",
+    "loan_to_income"
+  ],
+  "categorical": [
+    "employment_status",
+    "loan_purpose",
+    "region"
+  ],
+  "binary": [
+    "has_mortgage",
+    "has_car_loan",
+    "has_credit_card"
+  ],
+  "target": "default"
+}
